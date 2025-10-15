@@ -6,7 +6,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
-import { User, UserService } from '../../../layout/service/user.service';
+import { User, UserService } from '../../../service/user.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         // Successful registration, save token and navigate
         // localStorage.setItem('authToken', response.token); // Save token (use cookies in production!)
+        localStorage.setItem("userDetail",JSON.stringify(response.data.user));
         this.router.navigate(['/']);
       },
       error: (err) => {

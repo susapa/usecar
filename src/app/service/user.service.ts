@@ -2,14 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-// Define a simple interface for type safety (Best Practice)
-export interface User {
-  id?: number;
-  name?: string;
-  email: string;
-  password: string;
-}
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +20,15 @@ export class UserService {
   // Method for a POST request (e.g., login/register)
   registerUser(userData: any): Observable<any> {
     const body = { name: userData.email, email: userData.email, password: userData.password };
-    return this.http.post(this.apiUrl + '/register', body);
+    return this.http.post(this.apiUrl + '/register', body, { withCredentials: true });
   }
 
   login(userData: any): Observable<any> {
     const body = { email: userData.email, password: userData.password };
-    return this.http.post(this.apiUrl + '/login', body);
+    return this.http.post(this.apiUrl + '/login', body, { withCredentials: true });
+  }
+
+  getUser(userData: any): Observable<any> {
+    return this.http.get(this.apiUrl + '/getuser/' + userData, { withCredentials: true });
   }
 }

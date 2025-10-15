@@ -6,7 +6,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
-import { UserService } from '../../../layout/service/user.service';
+import { UserService } from '../../../service/user.service';
 
 @Component({
   selector: 'app-register',
