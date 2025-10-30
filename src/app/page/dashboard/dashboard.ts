@@ -3,7 +3,7 @@ import { NotificationsWidget } from './components/notificationswidget';
 import { StatsWidget } from './components/statswidget';
 import { BestSellingWidget } from './components/bestsellingwidget';
 import { RevenueStreamWidget } from './components/revenuestreamwidget';
-import { User, UserService } from '../../service/user.service';
+import { UserService } from '../../service/user.service';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 

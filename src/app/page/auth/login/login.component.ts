@@ -6,8 +6,9 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
-import { User, UserService } from '../../../service/user.service';
+import { UserService } from '../../../service/user.service';
 import Swal from 'sweetalert2'
+import { User } from '../../../model/user';
 
 @Component({
   selector: 'app-login',
